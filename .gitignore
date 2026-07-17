@@ -26,3 +26,18 @@ gradlew.bat
 # OS
 .DS_Store
 Thumbs.db
+
+# Notes and Help
+HELP.md
+HINTS.md
+/exercism/java/*/README.md
+
+# Gradle files
+/exercism/java/*/build.gradle
+/exercism/java/*/gradle/
+
+# Exercism files
+/exercism/java/*/.exercism/
+
+# Bin files
+/exercism/java/*/bin/
