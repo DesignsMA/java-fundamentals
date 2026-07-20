@@ -1,10 +1,12 @@
 public class CarsAssemble {
-
+    private static final int CARS_PER_HOUR = 221;
+    private static final double[] SUCCESS_RATE = {0.0,1.0,1.0,1.0,1.0,0.9,0.9,0.9,0.9,0.8,0.77};
+    
     public double productionRatePerHour(int speed) {
-        throw new UnsupportedOperationException("Please implement the CarsAssemble.productionRatePerHour() method");
+        return speed * CARS_PER_HOUR * SUCCESS_RATE[speed];
     }
 
     public int workingItemsPerMinute(int speed) {
-        throw new UnsupportedOperationException("Please implement the CarsAssemble.workingItemsPerMinute() method");
+        return (int) productionRatePerHour(speed) / 60;
     }
 }
