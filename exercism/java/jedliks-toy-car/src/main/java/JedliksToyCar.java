@@ -1,12 +1,7 @@
 public class JedliksToyCar {
     private int distance;
-    private int battery;
-
-    public JedliksToyCar() {
-        this.distance = 0;
-        this.battery = 100;
-    }
-
+    private int battery = 100;
+    
     public static JedliksToyCar buy() {
         return new JedliksToyCar();
     }
