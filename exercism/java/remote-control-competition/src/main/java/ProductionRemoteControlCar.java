@@ -1,18 +1,31 @@
-class ProductionRemoteControlCar {
+class ProductionRemoteControlCar implements RemoteControlCar, Comparable<ProductionRemoteControlCar> {
+    static final int SPEED = 10;
+    private int distanceTravelled;
+    public int numberOfVictories;
 
     public void drive() {
-        throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.drive() method");
+        distanceTravelled+=SPEED;
     }
 
     public int getDistanceTravelled() {
-        throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.getDistanceTravelled() method");
+        return distanceTravelled;
     }
 
     public int getNumberOfVictories() {
-        throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.getNumberOfVictories() method");
+        return numberOfVictories;
     }
 
     public void setNumberOfVictories(int numberOfVictories) {
-        throw new UnsupportedOperationException("Please implement the ProductionRemoteControlCar.setNumberOfVictories() method");
+        this.numberOfVictories = numberOfVictories;
     }
+
+    public int compareTo(ProductionRemoteControlCar other)
+    {
+        if (other == null)
+        {
+            throw new NullPointerException("Cannot compare with null");
+        }
+
+        return Integer.compare(other.numberOfVictories, this.numberOfVictories);
+    } 
 }
