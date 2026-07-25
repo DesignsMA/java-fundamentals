@@ -4,10 +4,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 class AppointmentScheduler {
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = 
+        DateTimeFormatter.ofPattern("M/dd/yyyy HH:mm:ss");
+    
+    private static final DateTimeFormatter DESCRIPTION_FORMATTER = 
+        DateTimeFormatter.ofPattern(
+            "'You have an appointment on' EEEE, MMMM d, yyyy, 'at' h:mm a.", 
+            Locale.US
+        );
+
     public LocalDateTime schedule(String appointmentDateDescription) {
         return LocalDateTime.parse(
             appointmentDateDescription,
-            DateTimeFormatter.ofPattern("M/dd/yyyy HH:mm:ss")
+            DATE_TIME_FORMATTER
         );
     }
 
@@ -22,10 +31,7 @@ class AppointmentScheduler {
 
     public String getDescription(LocalDateTime appointmentDate) {
         return appointmentDate.format(
-            DateTimeFormatter.ofPattern(
-                "'You have an appointment on' EEEE, MMMM d, yyyy, 'at' h:mm a.", 
-                Locale.US
-            )
+            DESCRIPTION_FORMATTER
         );
     }
 
