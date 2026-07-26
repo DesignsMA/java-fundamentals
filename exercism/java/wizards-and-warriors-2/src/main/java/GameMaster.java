@@ -1,12 +1,34 @@
 public class GameMaster {
 
-    // TODO: define a 'describe' method that returns a description of a Character
+    public static String describe(Character ch)
+    {
+        return "You're a level " + ch.getLevel() + " " + ch.getCharacterClass() + " with " + ch.getHitPoints() + " hit points.";
+    }
 
-    // TODO: define a 'describe' method that returns a description of a Destination
+    public static String describe(Destination ds)
+    {
+        return "You've arrived at " + ds.getName() + ", which has " + ds.getInhabitants() + " inhabitants.";
+    }
 
-    // TODO: define a 'describe' method that returns a description of a TravelMethod
+    public static String describe(TravelMethod tm)
+    {
+        switch (tm) {
+            case HORSEBACK:
+                return "You're traveling to your destination on horseback.";
+            case WALKING:
+                return "You're traveling to your destination by walking.";
+            default:
+                return  "You're traveling to your destination by walking";
+        }
+    }
 
-    // TODO: define a 'describe' method that returns a description of a Character, Destination and TravelMethod
+    public static String describe(Character ch, Destination ds, TravelMethod tm)
+    {
+        return describe(ch) + " " + describe(tm) + " " + describe(ds);
+    }
 
-    // TODO: define a 'describe' method that returns a description of a Character and Destination
+    public static String describe(Character ch, Destination ds)
+    {
+        return describe(ch) + " " + describe(TravelMethod.WALKING) + " " + describe(ds);
+    }
 }
